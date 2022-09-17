@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+
 // Homework 1
 // By James Afful
 
@@ -95,7 +97,7 @@ int main() {
 // Write a program that inputs a five-digit integer, separates the integer into its digits and prints them separated by three spaces each. [Hint: Use the integer division and modulus operators.] For example, if the user types in 42339, the program should print:
 //[4   2   3   3   9]
 
-    int num, newnum;
+/*    int num, newnum;
 
     cout << "Hi there! This is the solution to Question 28 of Chapter 2 \n" << "Now, enter a 5-digit integer" << endl;
     cin >> newnum;
@@ -114,11 +116,116 @@ int main() {
     newnum = newnum%10;
     cout << newnum << endl;
 
-    return  0;
+*/
+
 /* end of Chapter 2 */
 
 
-// Chapter 3:   5 to 15
+// Chapter 4:    13, 26, 27, 34, 35
 
 
+// Question 13
+
+//Drivers are concerned with the mileage obtained by their automobiles. One driver has kept track of several trips by recording miles driven and gallons used for each trip. Develop a C++ program that uses a while statement to input the miles driven and gallons used for each
+//trip. The program should calculate and display the miles per gallon obtained for each trip and print the combined miles per gallon obtained for all tankfuls up to this point
+
+/*
+    double milesDriven, gallonsUsed, totalGallons = 0.0, totalMilesDriven = 0.0, totalMilesPerGallon;
+
+    cout << "Enter the number of gallons used (-1 to end): ";
+    cin >> gallonsUsed;
+    while (gallonsUsed != -2) {
+        totalGallons += gallonsUsed;
+        cout << "Enter the number of miles driven: ";
+        cin >> milesDriven;
+        totalMilesDriven += milesDriven;
+        cout << "The miles per gallon for this trip was " << milesDriven / gallonsUsed << "\n\n Enter the gallons used (-1 to end): ";
+        cin >> gallonsUsed;
+    }
+    totalMilesPerGallon = totalMilesDriven / totalGallons;
+    cout << "\n The overall average Miles per Gallon was " << totalMilesPerGallon << endl;
+*/
+
+// Question 26
+/*
+    int number, firstDigit, secondDigit, fourthDigit, fifthDigit;
+    cout << "Enter a five-digit number: ";
+    cin >> number;
+    firstDigit = number / 10000;
+    secondDigit = number % 10000 / 1000;
+    fourthDigit = number % 10000 % 1000 % 100 / 10;
+    fifthDigit = number % 10000 % 1000 % 10;
+    if ( firstDigit == fifthDigit && secondDigit == fourthDigit )
+        cout << number << " is a palindrome" << endl;
+    else
+        cout << number << " is not a palindrome" << endl;
+
+*/
+
+// Question 27
+/*
+    int binary, number, decimal = 0, highBit = 16, factor = 10000;
+    cout << "Enter a binary number (5 digits maximum): ";
+    cin >> binary;
+    number = binary;
+    while ( highBit >= 1 ) {
+        decimal += binary / factor * highBit;
+        highBit /= 2;
+        binary %= factor;
+        factor /= 10;
+    }
+    cout << "The decimal equivalent of "
+         << number << " is " << decimal << endl;
+
+*/
+
+// Question 34
+// A---
+/*
+    int n = 0, number;
+    unsigned factorial = 1;
+    do {
+        cout << "Enter a positive integer: ";
+        cin >> number;
+    } while ( number < 0 );
+    while ( n++ < number )
+        factorial *= n == 0 ? 1 : n;
+    cout << number << "! is " << factorial << endl;
+
+
+// B---
+    int n = 0, fact = 1, accuracy = 10;
+    double e = 1;
+    while ( ++n < accuracy ) {
+        fact *= n;
+        e += 1.0 / fact;
+    }
+    cout << "e is " << e << endl;
+
+
+
+// C---
+    int n = 0, accuracy = 15, x = 3.0, times = 0, count;
+    double e = 1.0, exp = 0.0, fact = 1.0;
+    while ( n++ <= accuracy ) {
+        count = n;
+        fact *= n == 0 ? 1.0 : n;
+        while ( times < count ) {
+            if ( times == 0 )
+                exp = 1.0;
+            exp *= x;
+            ++times;
+        }
+        e += exp / fact;
+    }
+    cout << setiosflags( ios::fixed | ios::showpoint )
+         << "e raised to the " << x << " power is "
+         << setprecision( 4 ) << e << endl;
+
+*/
+
+// Question 35
+
+
+    return  0;
 }

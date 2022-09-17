@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
 void q2_19(){
@@ -595,31 +596,31 @@ public:
 };
 
 int main() {
-    //q2_19();
-    //q2_24();
-    //q2_25();
-    //q2_28();
+    q2_19();
+    q2_24();
+    q2_25();
+    q2_28();
 
-    /* Q3.11
+    /* Q3.11 */
     GradeBook myGB("Optimization","Matt Harris");
-    //cout << myGB.getCourseName();
+    cout << myGB.getCourseName();
     myGB.displayMessage();
-    */
+    
 
-    /* Q3.12
+    /* Q3.12 */
     Account myAcc(1000);
     cout << myAcc.getBalance() << endl;
     cout << myAcc.credit(500) << endl;
     cout << myAcc.debit(750) << endl;
     cout << myAcc.getBalance() << endl;
-     */
+     
 
-    /* Q3.13
+    /* Q3.13 */
     Invoice myInvoice = Invoice(33069,"Bike",12,200);
     cout << myInvoice.getInvoiceAmount();
-    */
+    
 
-    /* Q3.14
+    /* Q3.14 */
     Employee myEmp1 = Employee("Jane","Doe",5900);
     Employee myEmp2 = Employee("John","Doe",5850);
     cout << myEmp1.getFname() << " " << myEmp1.getLname() << " ,ANNUAL SALARY : $ " << myEmp1.getSalary()*12 << endl;
@@ -630,36 +631,36 @@ int main() {
     myEmp2.setSalary(newSalary2);
     cout << myEmp1.getFname() << " " << myEmp1.getLname() << " ,NEW ANNUAL SALARY : $ " << myEmp1.getSalary()*12 << endl;
     cout << myEmp2.getFname() << " " << myEmp2.getLname() << " ,NEW ANNUAL SALARY : $ " << myEmp2.getSalary()*12<< endl;
-    */
+    
 
-    /* 3.15
+    /* 3.15 */
     Date myDate = Date(12,1,1984);
     cout << myDate.displayDate();
-    */
+    
 
     /* 4.13 */
-    //mpg();
+    mpg();
 
     /* 4.26 */
-    //palindrome(11211);
+    palindrome(11211);
 
     /* 4.27 */
-    //binaryToDecimal(1101);
+    binaryToDecimal(1101);
 
     /* 4.34 */
-    //Factorial myFact = Factorial();
-    //cout << myFact.computeFactorial(5) << endl;
-    //cout << myFact.findE(15);
-    //cout << myFact.findEx(2,5) << endl;
+    Factorial myFact = Factorial();
+    cout << myFact.computeFactorial(5) << endl;
+    cout << myFact.findE(15);
+    cout << myFact.findEx(2,5) << endl;
 
-    /* 4.35
+    /* 4.35 */
     Cryptography myCrypt = Cryptography(3303);
     int message = myCrypt.encrypt();
     cout << "Your encrypted message is " << message << endl;
     int retrieve = myCrypt.decrypt(message);
     cout << "Your decrypted message is " << retrieve << endl;
+	
+	
     return 0;
-     */
+     
 }
-
-/* Chapter - 4 : 13,26,27,34,35 */

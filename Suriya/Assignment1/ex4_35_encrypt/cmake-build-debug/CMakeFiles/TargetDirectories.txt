@@ -1,3 +1,0 @@
-/Users/suriyanarayanan/CLionProjects/ex4_35/cmake-build-debug/CMakeFiles/ex4_35.dir
-/Users/suriyanarayanan/CLionProjects/ex4_35/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/suriyanarayanan/CLionProjects/ex4_35/cmake-build-debug/CMakeFiles/rebuild_cache.dir

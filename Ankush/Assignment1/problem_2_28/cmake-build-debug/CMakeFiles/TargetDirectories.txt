@@ -1,0 +1,3 @@
+/home/ankush/CLionProjects/problem_2_28/cmake-build-debug/CMakeFiles/problem_2_28.dir
+/home/ankush/CLionProjects/problem_2_28/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ankush/CLionProjects/problem_2_28/cmake-build-debug/CMakeFiles/rebuild_cache.dir

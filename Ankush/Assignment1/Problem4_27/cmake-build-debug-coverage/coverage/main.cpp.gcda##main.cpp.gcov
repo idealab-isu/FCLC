@@ -1,0 +1,36 @@
+        -:    0:Source:/home/ankush/CLionProjects/Problem4_27/main.cpp
+        -:    0:Graph:/home/ankush/CLionProjects/Problem4_27/cmake-build-debug-coverage/CMakeFiles/Problem4_27.dir/main.cpp.gcno
+        -:    0:Data:/home/ankush/CLionProjects/Problem4_27/cmake-build-debug-coverage/CMakeFiles/Problem4_27.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include<cmath>
+        -:    3:
+        -:    4:using namespace  std;
+function main called 1 returned 100% blocks executed 100%
+        1:    5:int main() {
+        -:    6:    int number;
+        -:    7:    int size;
+        1:    8:    cout<<" Enter the binary number: ";
+        1:    8-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    9:    cin>> number;
+        1:    9-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   10:    size = trunc(log10(number)) + 1 ;
+        1:   10-block  0
+call    0 returned 1
+        1:   11:    cout<< size<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   11-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   12:}
+        1:   12-block  0
+        1:   12-block  1

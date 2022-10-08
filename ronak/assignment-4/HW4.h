@@ -144,84 +144,253 @@ void selectionSort(int inArray[], int size, int progressIdx){
     }
 }
 
-int computePower(int base, int expo){
-    int init = 1;
-    for(int k = 1; k <= expo; k++){
-        init = init*base;
+
+void displayArray1d(int arr[], int arrSize){
+    for(int i = 0; i < arrSize; i++){
+        cout << arr[i] << " ";
     }
-    return init;
+    cout << endl;
 }
 
+void printVect(vector<int> inVect, int size){
+    for(int y = 0; y < size; y++){
+        cout << inVect[y] << " ";
+    }
+    cout << endl;
+}
 
-void bucketSort(int inArray[], int arrSize, int max_int_size){
+void displayArray2d(int arr[10][10]){
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 10; j++){
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+void bucketSort2(int inArray[], int arrSize, int max_int_size, bool printOn = false){
 
     //Create 2d Vector bucket
     //vector<vector<int>> buckets(10, vector<int>(arrSize)); //Initializing a 2d Vector with all zeros.
-    int buckets[10][10] = {0};
+    //Define Buckets
+    vector<int> bucket0;
+    vector<int> bucket1;
+    vector<int> bucket2;
+    vector<int> bucket3;
+    vector<int> bucket4;
+    vector<int> bucket5;
+    vector<int> bucket6;
+    vector<int> bucket7;
+    vector<int> bucket8;
+    vector<int> bucket9;
 
-    int curr_fill_out[10] = {0}; //This is to keep track how many elements have been inserted now into each bucket
-    int pass_count = 0;
-    int reenter_count = 0;
+    //Store Bucket Sizes at each iteration
+
+    int size0;
+    int size1;
+    int size2;
+    int size3;
+    int size4;
+    int size5;
+    int size6;
+    int size7;
+    int size8;
+    int size9;
+
+    int rnow;
+    int rpast;
+
     int power10[2] = {10,100};
-    //int interArrays[10] = {0}; //Storing intermediate results after gather step
-    while(pass_count < arrSize){
 
-        for(int numer = 1; numer <= max_int_size; numer++){
-            cout << "We are at Precision = " << numer << endl;
-            for(int pos = 0; pos < arrSize; pos++) {
-                //Distribute
-                int marker = (inArray[pos])%(power10[numer]); //Find out what array value to update.
-                buckets[marker][curr_fill_out[marker]] = inArray[pos];
-                curr_fill_out[marker] = curr_fill_out[marker] + 1;
+    for(int numer = 1; numer <= max_int_size; numer++) {
+        for (int pos = 0; pos < arrSize; pos++) {
+            //Distribute
+            int marker = (inArray[pos]) % (power10[numer - 1]);
+            switch (marker) {
+                case 0:
+                    bucket0.push_back(inArray[pos]);
+                    break;
 
-                for(int u = 0; u < 10; u++){
-                    cout << curr_fill_out[u] <<",";
-                }
-                cout << endl;
+                case 1:
+                    bucket1.push_back(inArray[pos]);
+                    break;
+
+                case 2:
+                    bucket2.push_back(inArray[pos]);
+                    break;
+
+                case 3:
+                    bucket3.push_back(inArray[pos]);
+                    break;
+
+                case 4:
+                    bucket4.push_back(inArray[pos]);
+                    break;
+
+                case 5:
+                    bucket5.push_back(inArray[pos]);
+                    break;
+
+                case 6:
+                    bucket6.push_back(inArray[pos]);
+                    break;
+
+                case 7:
+                    bucket7.push_back(inArray[pos]);
+                    break;
+
+                case 8:
+                    bucket8.push_back(inArray[pos]);
+                    break;
+
+                case 9:
+                    bucket9.push_back(inArray[pos]);
+                    break;
             }
-            cout << endl;
-
-                cout << "Printing Distribution" << endl;
-                for(int k = 0; k < 10; k++){
-                    for(int l = 0; l < 10; l++){
-                        cout << buckets[k][l] << " ";
-                    }
-                    cout << endl;
-                }
+        }
 
 
-                //Gather
-                for (int j = 0; j < 10; j++) {
-                    for(int y = 0; y < 10; y++) {
-                        if(buckets[j][y] != 0) {
-                            inArray[reenter_count] = buckets[j][y];
-                            reenter_count++;
-                        }
-                    }
-                }
-                reenter_count = 0;
-                pass_count++;
+        //Collect Bucket Sizes
+        size0 = bucket0.size();
+        size1 = bucket1.size();
+        size2 = bucket2.size();
+        size3 = bucket3.size();
+        size4 = bucket4.size();
+        size5 = bucket5.size();
+        size6 = bucket6.size();
+        size7 = bucket7.size();
+        size8 = bucket8.size();
+        size9 = bucket9.size();
 
-                //Print Gathering
+        if (printOn) {
+            cout << "Printing Buckets" << endl;
+            printVect(bucket0, size0);
+            printVect(bucket1, size1);
+            printVect(bucket2, size2);
+            printVect(bucket3, size3);
+            printVect(bucket4, size4);
+            printVect(bucket5, size5);
+            printVect(bucket6, size6);
+            printVect(bucket7, size7);
+            printVect(bucket8, size8);
+            printVect(bucket9, size9);
+            cout << "Printing Buckets End" << endl;
 
-                cout << "Printing Gathering" << endl;
-                for(int t = 0; t < 10; t++){
-                    cout << inArray[t] << " ";
-                }
-                cout << endl;
+        }
 
-        } //For each Digit Position
+        //Gather back
 
-    } //For n-1 passes
+        rnow = 0;
+        if (size0 > 0) {
+            for (int r0 = rnow; r0 < rnow + size0; r0++) {
+                inArray[r0] = bucket0[r0];
+            }
+        }
+        rnow = rnow + size0;
+        rpast = size0;
 
-    //return inArray; //print the sorted array
-    cout << "\n Printing out sorted array\n";
-    for ( int q = 0; q < 10; q++ ) {
-        cout << inArray[q] << ",";
-    }
-    cout << endl;
+        if (size1 > 0) {
+            for (int r1 = rnow; r1 < rnow + size1; r1++) {
+                inArray[r1] = bucket1[r1 - rpast];
+            }
+        }
 
-} //End Bucket Sort
+        rnow = rnow + size1;
+        rpast = size0 + size1;
+
+        if (size2 > 0) {
+            for (int r2 = rnow; r2 < rnow + size2; r2++) {
+                inArray[r2] = bucket2[r2 - rpast];
+            }
+        }
+
+        rnow = rnow + size2;
+        rpast = size0 + size1 + size2;
+
+        if (size3 > 0) {
+            for (int r3 = rnow; r3 < rnow + size3; r3++) {
+                inArray[r3] = bucket3[r3 - rpast];
+            }
+        }
+
+        rnow = rnow + size3;
+        rpast = size0 + size1 + size2 + size3;
+
+        if (size4 > 0) {
+            for (int r4 = rnow; r4 < rnow + size4; r4++) {
+                inArray[r4] = bucket4[r4 - rpast];
+            }
+        }
+
+        rnow = rnow + size4;
+        rpast = size0 + size1 + size2 + size3 + size4;
+
+        if (size5 > 0) {
+            for (int r5 = rnow; r5 < rnow + size5; r5++) {
+                inArray[r5] = bucket5[r5 - rpast];
+            }
+        }
+
+
+        rnow = rnow + size5;
+        rpast = size0 + size1 + size2 + size3 + size4 + size5;
+
+        if (size6 > 0) {
+            for (int r6 = rnow; r6 < rnow + size6; r6++) {
+                inArray[r6] = bucket6[r6 - rpast];
+            }
+        }
+
+        rnow = rnow + size6;
+        rpast = size0 + size1 + size2 + size3 + size4 + size5 + size6;
+
+        if (size7 > 0) {
+            for (int r7 = rnow; r7 < rnow + size7; r7++) {
+                inArray[r7] = bucket7[r7 - rpast];
+            }
+        }
+
+        rnow = rnow + size7;
+        rpast = size0 + size1 + size2 + size3 + size4 + size5 + size6 + size7;
+
+        if (size8 > 0) {
+            for (int r8 = rnow; r8 < rnow + size8; r8++) {
+                inArray[r8] = bucket8[r8 - rpast];
+            }
+        }
+
+        rnow = rnow + size8;
+        rpast = size0 + size1 + size2 + size3 + size4 + size5 + size6 + size7 + size8;
+
+        if (size9 > 0) {
+            for (int r9 = rnow; r9 < rnow + size9; r9++) {
+                inArray[r9] = bucket9[r9 - rpast];
+            }
+        }
+
+        //Reprint the Array after every round
+        cout << "\n Reprinting Array after every round\n";
+        displayArray1d(inArray,10);
+
+        //Clear all Vectors
+        bucket0.clear();
+        bucket1.clear();
+        bucket2.clear();
+        bucket3.clear();
+        bucket4.clear();
+        bucket5.clear();
+        bucket6.clear();
+        bucket7.clear();
+        bucket8.clear();
+        bucket9.clear();
+
+
+    } //End Precision
+
+}//End Bucket Sort
+
+
 
 
 

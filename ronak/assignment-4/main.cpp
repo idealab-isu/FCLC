@@ -62,6 +62,10 @@ int main() {
 
     eratosthenesPrime(); //Q. 7.29
 
+    /* 7.30 */
+    int sortArray[10] = {3,7,9,0,1,2,6,4,8,5};
+    bucketSort2(sortArray,10,1, true);
+
 
     /* 7.31 */
     int sortArray[10] = {3,7,9,0,1,2,6,4,8,5};

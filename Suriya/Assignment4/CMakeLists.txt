@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.23)
+project(Assignment4)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(ex7_11 ex7_11.cpp)
+add_executable(ex7_12 ex7_12.cpp)
+add_executable(ex7_15 ex7_15.cpp)
+add_executable(ex7_18 ex7_18.cpp)
+add_executable(ex7_24b ex7_24b.cpp)
+add_executable(ex7_24c ex7_24c.cpp)
+add_executable(ex7_25a ex7_25a.cpp)
+add_executable(ex7_25b ex7_25b.cpp)
+add_executable(ex7_25c ex7_25c.cpp)
+add_executable(ex7_29 ex7_29.cpp)
+add_executable(ex7_30 ex7_30.cpp)
+add_executable(ex7_31 ex7_31.cpp)
+add_executable(ex7_33 ex7_33.cpp)
+add_executable(ex7_37 ex7_37.cpp)
+add_executable(ex7_40 ex7_40.cpp)
+

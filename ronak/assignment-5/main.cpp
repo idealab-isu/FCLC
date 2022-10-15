@@ -3,11 +3,8 @@
 #include <vector>
 #include <cmath>
 #include <ctime>
-#include "TowerHanoi.h"
-#include "HW7.h"
 #include <math.h>
 #include <stack>
-#include "bucket.h"
 #include "hw5.h"
 
 using namespace std;

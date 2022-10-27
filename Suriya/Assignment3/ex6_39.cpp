@@ -27,8 +27,8 @@ void towerOfHanoi(int noOfDisks, int initialPeg, int targetPeg, int tempPeg){
         if(j%3==1)
             cout<<"Move disk from peg "<<initialPeg<<" to "<<targetPeg<<endl;
         if(j%3==2)
-            cout<<"Move disk from peg "<<initialPeg<<" to "<<targetPeg<<endl;
+            cout<<"Move disk from peg "<<initialPeg<<" to "<<tempPeg<<endl;
         if(j%3==0)
-            cout<<"Move disk from peg "<<targetPeg<<" to "<<tempPeg<<endl;
+            cout<<"Move disk from peg "<<tempPeg<<" to "<<targetPeg<<endl;
     }
 }
